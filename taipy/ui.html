@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>State &amp; Button</h1>
+
+  <p>
+    현재 매출:
+    <taipy:text>{sales}</taipy:text>
+  </p>
+
+  <div class="buttons">
+    <taipy:button label="+10" on_action="add_sales"></taipy:button>
+    <taipy:button label="Reset" on_action="reset_sales"></taipy:button>
+  </div>
+</div>

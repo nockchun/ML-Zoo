@@ -1,17 +1,20 @@
+###############################################################################
+# Understanding State Variable Binding + Button Actions
+###############################################################################
 from taipy import Gui
 
-# 1) State variables to bind to the UI
+# State variables to bind to the UI
 sales = 100
 base_sales = 100
 
-# 2) Augmented Markdown page
+# Augmented Markdown page
 # Taipy GUI uses augmented Markdown for visual elements, with the basic syntax <|{variable}|visual_element_type|...|>.
 # Buttons execute functions when clicked and can have attributes like label and on_action.
 # The on_action attribute specifies the callback (or callback name) to be called when pressed.
 # The callback receives the State object as its first argument, which is used to read/modify values per user session.
 # In Taipy, each user's session is managed independently, so the State object ensures that changes made by one user do not affect others.
 page = """
-# Step 2 - State & Button
+# State & Button
 
 현재 매출: <|{sales}|text|>
 
@@ -27,8 +30,9 @@ def reset_sales(state):
     state.sales = state.base_sales
 
 
-Gui(page).run(port=5050, debug=True, use_reloader=True, title="step 102")
-
+if __name__ == "__main__":
+    gui = Gui(page, env_filename="dev.env")
+    gui.run(title="102: Markdown Page")
 
 # Understanding how state variables work in a Taipy application : Server-side state management and user sessions.
 # 1) Initialization: 
