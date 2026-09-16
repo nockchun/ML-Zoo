@@ -12,6 +12,7 @@ git config -g alias.save '!f() { git add -A && git commit -m "$1"; }; f'
 git config -g alias.b 'branch -vv'
 git config -g alias.name '!f() { git branch -m "$1"; }; f'
 git config -g alias.sw 'switch'
+git config -g alias.mg 'merge'
 git config -g alias.swf '!f() { git switch "$1" && git clean -fd; }; f'
 git config -g alias.new '!f() { git switch -c "$1"; }; f'
 git config -g alias.del '!f() { git branch -d "$1"; }; f'
@@ -72,6 +73,7 @@ git config alias.save '!f() { git add -A && git commit -m "$1"; }; f'
 git config alias.b 'branch -vv'
 git config alias.name '!f() { git branch -m "$1"; }; f'
 git config alias.sw 'switch'
+git config alias.mg 'merge'
 git config alias.swf '!f() { git switch "$1" && git clean -fd; }; f'
 git config alias.new '!f() { git switch -c "$1"; }; f'
 git config alias.del '!f() { git branch -d "$1"; }; f'
@@ -289,12 +291,12 @@ git l
 ### 15. 첫 번째 merge : feature/menu
 ```bash
 git sw main
-git merge feature/menu
+git mg feature/menu
 ```
 
 ### 16. 두 번째 merge(충돌 발생) : feature/receipt
 ```bash
-git merge feature/receipt
+git mg feature/receipt
 
 # file1.txt 충돌 내용 확인 및 수정
 git add file1.txt
