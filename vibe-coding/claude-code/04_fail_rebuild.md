@@ -44,7 +44,7 @@ chrome extension을 이용하여 실제 브라우저에서 동작을 테스트 �
 "python -m http.server 8989"로 서버를 실행하여 기능 확인.
 정상적으로 개발이 되었으면 커밋. 오류가 있으면 추가 수정프롬프트로 수정 후 커밋.
 ```bash
-git save "feat: F2 장바구니와 합계"
+git save "feat: 장바구니와 합계"
 ```
 
 ---

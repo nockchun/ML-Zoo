@@ -49,7 +49,7 @@ chrome extension을 이용하여 실제 브라우저에서 동작을 테스트 �
 
 서버 실행하여 정상 동작되는 것 확인 후 git 커밋.
 ```bash
-git save "feat: F1 메뉴 목록과 카테고리 탭"
+git save "feat: 메뉴 목록과 카테고리 탭"
 ```
 
 ---
