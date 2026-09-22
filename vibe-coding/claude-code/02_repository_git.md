@@ -2,14 +2,21 @@
 
 ## 별칭 등록
 ```bash
+# ── 조회 ──
 git config -g alias.s 'status --short'
 git config -g alias.l 'log --oneline --graph --decorate --all -20'
+git config -g alias.b 'branch -vv'
+
+# ── 저장 ──
+git config -g alias.save '!f() { git add -A && git commit -m "$1"; }; f'
+
+# ── 되돌리기 (⚠️ 데이터 삭제) ──
 git config -g alias.undo 'reset --hard HEAD'
 git config -g alias.undof '!f() { git reset --hard HEAD && git clean -fd; }; f'
 git config -g alias.back  '!f() { git reset --hard "${1:-HEAD~1}"; }; f'
 git config -g alias.backf '!f() { git reset --hard "${1:-HEAD~1}" && git clean -fd; }; f'
-git config -g alias.save '!f() { git add -A && git commit -m "$1"; }; f'
-git config -g alias.b 'branch -vv'
+
+# ── 브랜치 ──
 git config -g alias.name '!f() { git branch -m "$1"; }; f'
 git config -g alias.sw 'switch'
 git config -g alias.mg 'merge'
@@ -63,22 +70,32 @@ git commit -m "base: 초기 repository 샐성"
 
 ### 3. 별칭 등록
 ```bash
+# ── 조회 ──
 git config alias.s 'status --short'
 git config alias.l 'log --oneline --graph --decorate --all -20'
-git config alias.undo 'reset --hard HEAD'
+git config alias.b 'branch -vv'
+
+# ── 저장 ──
+git config alias.save '!f() { git add -A && git commit -m "$1"; }; f'
+
+# ── 되돌리기 (⚠️ 데이터 삭제) ──
+git config alias.undo  'reset --hard HEAD'
 git config alias.undof '!f() { git reset --hard HEAD && git clean -fd; }; f'
 git config alias.back  '!f() { git reset --hard "${1:-HEAD~1}"; }; f'
 git config alias.backf '!f() { git reset --hard "${1:-HEAD~1}" && git clean -fd; }; f'
-git config alias.save '!f() { git add -A && git commit -m "$1"; }; f'
-git config alias.b 'branch -vv'
+
+# ── 브랜치 ──
 git config alias.name '!f() { git branch -m "$1"; }; f'
-git config alias.sw 'switch'
-git config alias.mg 'merge'
-git config alias.swf '!f() { git switch "$1" && git clean -fd; }; f'
-git config alias.new '!f() { git switch -c "$1"; }; f'
-git config alias.del '!f() { git branch -d "$1"; }; f'
+git config alias.sw   'switch'
+git config alias.mg   'merge'
+git config alias.swf  '!f() { git switch "$1" && git clean -fd; }; f'
+git config alias.new  '!f() { git switch -c "$1"; }; f'
+git config alias.del  '!f() { git branch -d "$1"; }; f'
 git config alias.delf '!f() { git branch -D "$1"; }; f'
 git config alias.drop '!f() { git switch main && git branch -D "$1"; }; f'
+
+echo "✅ git 별칭 16개 등록 완료"
+git config --get-regexp '^alias\.' | sed 's/^alias\./  /'
 ```
 
 ### 4. 첫 번째 커밋 생성
