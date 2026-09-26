@@ -1,0 +1,38 @@
+# 의존성
+node_modules/
+
+# conda 사용 — 로컬 venv 금지 (CONSTRAINTS C1)
+venv/
+.venv/
+
+# 빌드·테스트 산출물
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+frontend/.next/
+frontend/out/
+e2e/test-results/
+e2e/playwright-report/
+
+# SQLite 데이터 파일 (worktree 마다 다름)
+backend/data/*.db
+backend/data/*.db-*
+
+# 환경 (구현자/검증자 worktree 마다 다름)
+.env
+
+# 캐시 (검증 기록은 추적하지 않음)
+.cache/
+
+# 역할 표시와 개인 설정 (worktree·사람마다 다름)
+.agent-role
+.claude/settings.local.json
+
+# 기타
+.DS_Store
+*.orig
+*.rej
+*.bak
